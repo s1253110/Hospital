@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A hospital system built up for project",
+  "author": "LIN Jun Shan",
+  "engines": {
+    "node": "^14.15.1"
+},
+  "main": "server.js",
+  "dependencies": {
+    "cookie-session": "latest",
+    "body-parser": "^1.18.3",
+    "ejs": "*",
+    "express": "*",
+    "mongodb": "*",
+    "assert": "^1.4.1"
+   
+},
+  "engine": "node >= 12.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ejs": "^3.1.6"
+  }
+}
