@@ -1,3 +1,9 @@
+const link = 'https://hosiptal.onrender.com';
+
+app.get('/endpoint', (req, res) => {
+  res.redirect(link);
+});
+
 const assert = require('assert');
 
 const MongoClient = require('mongodb').MongoClient;
