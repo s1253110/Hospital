@@ -171,6 +171,48 @@ app.get('/', function (req, res) {
     console.log("...Hello, welcome back");
 });
 
+
+
+
+
+
+const express = require('express');
+const app = express();
+
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+  res.render('home');
+});
+
+// Route for the login page
+app.get('/login', (req, res) => {
+  // Perform any necessary server-side logic for login
+  // Pass data to the EJS template if needed
+  res.render('login');
+});
+
+app.get('/update', (req, res) => {
+  // Perform any necessary server-side logic
+  // Pass data to the EJS template if needed
+  res.render('update');
+});
+
+app.get('/edit', (req, res) => {
+  // Perform any necessary server-side logic
+  // Pass data to the EJS template if needed
+  res.render('edit');
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
+
+
+
+
+
 // Login
 app.get('/login', function (req, res) {
     console.log("...Welcome to the login page.");
