@@ -1,2 +1,72 @@
-<h1>Welcome.</h1>
-<p>This is the home page of the website.</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homepage</title>
+</head>
+<body>
+  <h1>Welcome.</h1>
+  <p>This is the home page of the website.</p>
+
+  <!-- Create -->
+  <h2>Create</h2>
+  <form action="/patients" method="POST">
+    <label for="patientName">Patient Name:</label>
+    <input type="text" id="patientName" name="patientName" required><br>
+    <label for="patientID">Patient ID:</label>
+    <input type="text" id="patientID" name="patientID" minlength="8" maxlength="8" required><br>
+    <label for="gender">Gender:</label>
+    <input type="text" id="gender" name="gender"><br>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob"><br>
+    <label for="contactNumber">Contact Number:</label>
+    <input type="tel" id="contactNumber" name="contactNumber" pattern="[0-9]{8}"><br>
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address"><br>
+    <label for="medicalCondition">Medical Condition:</label>
+    <input type="text" id="medicalCondition" name="medicalCondition"><br>
+    <label for="allergies">Allergies:</label>
+    <input type="text" id="allergies" name="allergies"><br>
+    <button type="submit">Create</button>
+  </form>
+
+  <!-- Read -->
+  <h2>Read</h2>
+  <h3>List all information:</h3>
+  <ul>
+    <% patientIDs.forEach(function(patientID) { %>
+      <li><a href="/patients/<%= patientID %>"><%= patientID %></a></li>
+    <% }); %>
+  </ul>
+
+  <h3>Search by patient ID:</h3>
+  <form action="/patients/search" method="POST">
+    <label for="searchPatientID">Patient ID:</label>
+    <input type="text" id="searchPatientID" name="searchPatientID" minlength="8" maxlength="8" required>
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- Update -->
+  <h2>Update</h2>
+  <form action="/patients/<%= patientID %>/update" method="POST">
+    <label for="updateGender">Gender:</label>
+    <input type="text" id="updateGender" name="gender"><br>
+    <label for="updateDOB">Date of Birth:</label>
+    <input type="date" id="updateDOB" name="dob"><br>
+    <label for="updateContactNumber">Contact Number:</label>
+    <input type="tel" id="updateContactNumber" name="contactNumber" pattern="[0-9]{8}"><br>
+    <label for="updateAddress">Address:</label>
+    <input type="text" id="updateAddress" name="address"><br>
+    <label for="updateMedicalCondition">Medical Condition:</label>
+    <input type="text" id="updateMedicalCondition" name="medicalCondition"><br>
+    <label for="updateAllergies">Allergies:</label>
+    <input type="text" id="updateAllergies" name="allergies"><br>
+    <button type="submit">Update</button>
+  </form>
+
+  <!-- Delete -->
+  <h2>Delete</h2>
+  <form action="/patients/<%= patientID %>/delete" method="POST">
+    <button type="submit">Delete</button>
+  </form>
+</body>
+</html>
