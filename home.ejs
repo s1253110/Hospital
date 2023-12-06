@@ -54,6 +54,23 @@
     <% }); %>
   </ul>
 
+ <h3>Edition</h3>
+ <form action="/api/item/<%= item._id %>" method="PUT">
+   <label for="name">Name:</label>
+   <input type="text" id="name" name="name" value="<%= item.name %>" required>
+   <label for="department">Department:</label>
+   <input type="text" id="department" name="department" value="<%= item.department %>" required>
+   <label for="number">Phone Number:</label>
+   <input type="text" id="number" name="number" value="<%= item.phone %>" required>
+   <label for="description">Description:</label>
+   <textarea id="description" name="description" required><%= item.description %></textarea>
+   <label for="city">City:</label>
+   <input type="text" id="city" name="city" value="<%= item.address.city %>" required>
+   <label for="street">Street:</label>
+   <input type="text" id="street" name="street" value="<%= item.address.street %>">
+   <button type="submit">Update</button>
+ </form>
+
   <h3>Search by patient ID:</h3>
   <form action="/patients/search" method="POST">
     <label for="searchPatientID">Patient ID:</label>
