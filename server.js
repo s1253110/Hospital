@@ -204,6 +204,12 @@ app.get('/edit', (req, res) => {
   res.render('edit');
 });
 
+app.get('/search', (req, res) => {
+  // Perform any necessary server-side logic
+  // Pass data to the EJS template if needed
+  res.render('search');
+});
+
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
