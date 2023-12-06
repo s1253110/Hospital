@@ -7,6 +7,16 @@
   <h1>Welcome.</h1>
   <p>This is the home page of the website.</p>
 
+ <!-- Login -->
+ <h2>Login</h2>
+ <form action="/login" method="POST">
+   <label for="username">Username:</label>
+   <input type="text" id="username" name="username" required>
+   <label for="password">Password:</label>
+   <input type="password" id="password" name="password" required>
+   <button type="submit">Login</button>
+ </form>
+
   <!-- Create -->
   <h2>Create</h2>
   <form action="/patients" method="POST">
