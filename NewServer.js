@@ -1,4 +1,7 @@
 const link = 'https://hosiptal.onrender.com';
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
 
 app.get('/endpoint', (req, res) => {
   res.redirect(link);
@@ -380,6 +383,48 @@ app.get('/delete', function (req, res) {
         return res.status(200).render('info', { message: "Access denied - You don't have access and deletion rights!" });
     }
 });
+
+
+// 设置EJS作为模板引擎
+app.set('view engine', 'ejs');
+
+// 使用body-parser中间件解析请求体
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// 渲染homepage.ejs模板
+app.get('/', (req, res) => {
+  res.render('homepage', { message: null });
+});
+
+// 处理表单提交的更新请求
+app.post('/create', (req, res) => {
+  const name = req.body.name;
+  const phone = req.body.phone;
+  const address = req.body.address;
+  const allergies = req.body.allergies;
+  const diseases = req.body.diseases;
+  const birth = req.body.birth;
+
+  // 在实际应用中，这里可以将更新的信息存储到数据库或进行其他操作
+
+  const message = `Record has been created<br><br><br>Name: ${name}<br>Phone: ${phone}<br>address: ${address}<br>allergies: ${allergies}<br>diseases: ${diseases}<br>birth: ${birth}`;
+
+  app.post('/update', (req, res) => {
+  const name = req.body.name;
+  const phone = req.body.phone;
+  const address = req.body.address;
+  const allergies = req.body.allergies;
+  const diseases = req.body.diseases;
+  const birth = req.body.birth;
+
+  // 在实际应用中，这里可以将更新的信息存储到数据库或进行其他操作
+
+  const message = `Information has been updated<br><br>Name: ${name}<br>Phone: ${phone}<br>address: ${address}<br>allergies: ${allergies}<br>diseases: ${diseases}<br>birth: ${birth}`;
+
+  res.render('homepage', { message: message });
+});
+
+
 
 // Restful
 // Insert
