@@ -422,13 +422,33 @@ app.post('/find', (req, res) => {
 });
 
 // 渲染display.ejs模板
-app.get('/display', (req, res) => {
-  res.render('display');
+app.post('/display', (req, res) => {
+  const name = req.body.name;
+  const phone = req.body.phone;
+  const address = req.body.address;
+  const birth = req.body.birth;
+  const allergies = req.body.allergies;
+  const diseases = req.body.diseases;
+
+  // 可以根据需要在这里执行其他逻辑，如将数据存储到数据库等
+
+  res.render('display', {
+    name: name,
+    phone: phone,
+    address: address,
+    birth: birth,
+    allergies: allergies,
+    diseases: diseases
+    // recordId: 123, // 假设这里是记录的唯一标识符，用于删除操作
+  });
+});
 });
 
 // 渲染delete.ejs模板
 app.get('/delete', (req, res) => {
-  res.render('delete');
+  const deleteId = req.body.deleteId;
+
+    res.render('delete');
 });
 
 
