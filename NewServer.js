@@ -405,6 +405,32 @@ app.get('/delete', function (req, res) {
     }
 });
 
+app.get('/find', (req, res) => {
+  res.render('find', { message: null });
+});
+
+// 处理表单提交的查找请求
+app.post('/find', (req, res) => {
+  const findName = req.body.findName;
+  const findPhone = req.body.findPhone;
+
+  // 在实际应用中，这里可以根据findName和findPhone执行查找操作
+
+  const message = `Information found:<br><br>Name: ${findName}<br>Phone: ${findPhone}`;
+
+  res.render('find', { message: message });
+});
+
+// 渲染display.ejs模板
+app.get('/display', (req, res) => {
+  res.render('display');
+});
+
+// 渲染delete.ejs模板
+app.get('/delete', (req, res) => {
+  res.render('delete');
+});
+
 
 // 设置EJS作为模板引擎
 app.set('view engine', 'ejs');
