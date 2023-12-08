@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <h1>Welcome to XXX Hospital</h1>
 
 <h2>Login</h2>
@@ -55,9 +58,31 @@
 
 <hr>
 
+<head>
+  <title>Options</title>
+</head>
+<body>
+  <h2>Please choose</h2>
+  <form action="/choose" method="POST">
+    <select name="choice" required>
+      <option value="">Select an option</option>
+      <option value="create">Create</option>
+      <option value="update">Update</option>
+      <option value="find">Find</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+
+  <hr>
+
+  <nav>
+    <ul>
       <li><a href="/find" target="_blank">Find</a></li>
       <li><a href="/create" target="_blank">Create</a></li>
       <li><a href="/update" target="_blank">Update</a></li>
+    </ul>
+  </nav>
+</body>
 
 <h2>Create</h2>
 <form action="/create" method="POST">
@@ -161,3 +186,5 @@
 
 <h2>Change Committed</h2>
 <button onclick="window.location.href='/back'">Back</button>
+
+</html>
