@@ -438,8 +438,8 @@ app.post('/display', (req, res) => {
     address: address,
     birth: birth,
     allergies: allergies,
-    diseases: diseases
-    recordId: phone, // 假设这里是记录的唯一标识符，用于删除操作
+    diseases: diseases,
+    recordId: phone // 假设这里是记录的唯一标识符，用于删除操作
   });
 });
 });
