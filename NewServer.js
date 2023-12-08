@@ -178,6 +178,27 @@ const express = require('express');
 const app = express();
 
 app.set('view engine', 'ejs');
+// Set EJS as the template engine
+app.set('view engine', 'ejs');
+
+// Use body-parser middleware to parse request bodies
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Render homepage.ejs template
+app.get('/', (req, res) => {
+  res.render('homepage', { message: null });
+});
+
+// Handle delete request
+app.post('/delete', (req, res) => {
+  const deleteId = req.body.deleteId;
+
+  // In a real application, you would perform the deletion operation based on the deleteId
+
+  const message = `Information with ID ${deleteId} has been deleted`;
+
+  res.render('homepage', { message: message });
+});
 
 app.get('/', (req, res) => {
   res.render('home');
