@@ -192,6 +192,14 @@ app.get('/login', (req, res) => {
   res.render('login');
 });
 
+app.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
+// Route for the signup page
+app.post('/register', (req, res) => {
+});
+
 app.get('/update', (req, res) => {
   // Perform any necessary server-side logic
   // Pass data to the EJS template if needed
