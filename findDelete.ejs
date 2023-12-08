@@ -1,0 +1,14 @@
+  <h2>Delete:</h2>
+  <form id="deleteForm" action="/delete" method="POST">
+    <label for="deleteId">ID:</label>
+    <input type="text" id="deleteId" name="deleteId">
+    <button type="submit">Delete</button>
+  </form>
+
+  <hr>
+
+  <div id="displayMessage">
+    <% if (message) { %>
+      <p><%= message %></p>
+    <% } %>
+  </div>
