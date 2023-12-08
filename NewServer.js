@@ -171,11 +171,6 @@ app.get('/', function (req, res) {
     console.log("...Hello, welcome back");
 });
 
-
-
-
-
-
 const express = require('express');
 const app = express();
 
@@ -200,6 +195,10 @@ app.get('/signup', (req, res) => {
 app.post('/register', (req, res) => {
 });
 
+app.get('/', (req, res) => {
+  res.render('index');
+});
+
 app.get('/update', (req, res) => {
   // Perform any necessary server-side logic
   // Pass data to the EJS template if needed
@@ -218,14 +217,9 @@ app.get('/search', (req, res) => {
   res.render('search');
 });
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(8099, () => {
+  console.log('Server is running on port 8099');
 });
-
-
-
-
-
 
 // Login
 app.get('/login', function (req, res) {
