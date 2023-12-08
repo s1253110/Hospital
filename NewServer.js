@@ -439,7 +439,7 @@ app.post('/display', (req, res) => {
     birth: birth,
     allergies: allergies,
     diseases: diseases
-    // recordId: 123, // 假设这里是记录的唯一标识符，用于删除操作
+    recordId: phone, // 假设这里是记录的唯一标识符，用于删除操作
   });
 });
 });
